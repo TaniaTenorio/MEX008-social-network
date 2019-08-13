@@ -36,6 +36,7 @@ window.firebaseFunction = {
                 console.log(errorCode);
                 console.log(errorMessage);
             });
+            return alert("felicidades estas registrado");
     },
     functionLogin: () => {
         let logInEmail = document.getElementById("login-email").value;
@@ -61,6 +62,7 @@ window.firebaseFunction = {
                 console.log(errorCode);
                 console.log(errorMessage);
             });
+            return alert("Login Exitoso")
     },
     observe: () => {
         firebase.auth().onAuthStateChanged(function (user) {
@@ -85,7 +87,10 @@ window.firebaseFunction = {
               // ...
             }
         });
+
+        return console.log("Observador activo")
     },
+
     // write: (user) => {
     //         // let user1 = user;
     //         // let content = document.getElementById("content");
@@ -93,18 +98,21 @@ window.firebaseFunction = {
     //         // content.innerHTML = "Login exitoso";
     //     }
     // },
+
         // observe();
     verify: () => {
         let user = firebase.auth().currentUser;
         user.sendEmailVerification()
             .then(function () {
                 alert("Revisa tu correo, debes verificar tu cuenta");
-                console.log("enviando correo...");
+                /* console.log("enviando correo..."); */
           // Email sent.
             }).catch(function (error) {
                 console.log(error);
           // An error happened.
             });
+
+            return console.log("enviando correo...");
     },
     loginGoogle: () => {
             const provider = new firebase.auth.GoogleAuthProvider();
@@ -127,6 +135,7 @@ window.firebaseFunction = {
         const credential = error.credential;
         // ...
         });
+        return alert("Login con Google exitoso");
     },
     loginFacebook: () => {
         const provider = new firebase.auth.FacebookAuthProvider();
@@ -146,6 +155,7 @@ window.firebaseFunction = {
         const credential = error.credential;
             // ...
         });
+        return alert("Login con Google exitoso");
     },
     savePost: () => {
       db.collection("newPosts").add({
@@ -166,5 +176,5 @@ window.firebaseFunction = {
     }).catch(function(error) {
         console.error("Error removing document: ", error);
     });
-}
+    }
 };
