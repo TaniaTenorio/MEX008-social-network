@@ -1,3 +1,4 @@
+let db = firebase.firestore();
 window.firebaseFunction = {
     register: () => {
         // console.log("diste un click");
@@ -145,6 +146,25 @@ window.firebaseFunction = {
         const credential = error.credential;
             // ...
         });
-    }
+    },
+    savePost: () => {
+      db.collection("newPosts").add({
+        textPost: document.getElementById("add-post").value
+        })
+            .then(function (docRef) {
+                // console.log("Document written with ID: ", docRef.id);
+                //limpiar el input despues de dar click
+                textPost: document.getElementById("add-post").value = "";
+            })
+            .catch(function (error) {
+                console.error("Error adding document: ", error);
+            });
+    },
+    deletePost: (id) => {
+    db.collection("newPosts").doc(id).delete().then(function() {
+        console.log("Document successfully deleted!");
+    }).catch(function(error) {
+        console.error("Error removing document: ", error);
+    });
+}
 };
-

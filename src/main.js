@@ -132,19 +132,7 @@ logOffBtn.addEventListener("click",logOff);
 //     authDomain: "foodlova-be05e.firebaseapp.com",
 //     projectId: "foodlova-be05e"
 //   });
-let db = firebase.firestore();
 
-  db.collection("users").add({
-    first: "Vero",
-    last: "Dulces",
-    born: 1900
-})
-.then(function(docRef) {
-    console.log("Document written with ID: ", docRef.id);
-})
-.catch(function(error) {
-    console.error("Error adding document: ", error);
-});
 
 
 // export default {
