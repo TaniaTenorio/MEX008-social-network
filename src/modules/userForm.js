@@ -11,7 +11,7 @@ let userform = {
              <input type="text" id="username" name="Usuario" class="text"><br>
              <label for="email">Correo Electronico</label><br>
              <input type= "email" id="signup-email" name="electronico" class="text"><br>
-             <label for="password">contraseña</label><br>
+             <label for="password">Contraseña</label><br>
              <input type="password" id="create-password" name="contraseña" class="text"><br>
              <label for="confirm">Confirma tu contraseña</label><br>
              <input type="password" id="confirm-password" name="confirma" class="text"><br>

@@ -71,8 +71,8 @@ window.firebaseFunction = {
                 console.log("existe usuario activo");
                 console.log(user);
               // User is signed in.
-                // let displayName = user.displayName;
-                // console.log(displayName);
+                let displayName = user.displayName;
+                console.log(displayName);
                 let email = user.email;
                 let emailVerified = user.emailVerified;
                 console.log(user.emailVerified);

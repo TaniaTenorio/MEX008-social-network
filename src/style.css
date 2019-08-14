@@ -11,6 +11,7 @@ a{
     height: 640px;
 }
 .intro,
+.intro .btns,
 .log-in,
 .sign-in,
 .welcome,
@@ -19,8 +20,11 @@ a{
     background-repeat: repeat-x;
     height: 100%;
 }
+.log-in .log-in-btns,
+.form-btn,
 .user-info,
 .timeline,
+.welcome .welcome-btn,
 .location{
     height: 100%;
 }
@@ -97,16 +101,12 @@ a{
     font-size: 18pt;
     margin: 1rem;
 }
-
-.log-in .log-in-data,
-.log-in .log-in-btns{
-    padding: 30px 10px;
-}
 .log-in .log-in-data h3{
     color: white;
     font-family: 'Mitr', sans-serif;
     font-size: 24pt;
     text-align: center;
+    padding: 0;
 }
 .log-in .log-in-data label{
     color: white;
@@ -153,6 +153,7 @@ a{
     font-size: 27pt;
     text-align: center;
     color: black;
+    padding: 0.5em;
 }
 .sign-in .sign-in-options img{
     width: 5rem;
@@ -190,34 +191,46 @@ a{
 .user-info .user-info-header img{
     
 }
+.user-info .info-inputs{
+    padding: 15px;
+    text-align: center;
+}
 .user-info .info-inputs label{
     font-family: 'Mitr', sans-serif;
-    font-size: 20pt;
+    font-size: 18pt;
     margin-bottom: 5px;
 }
 .user-info .info-inputs input{
     border: none;
     border-radius: 16pt;
-    font-size: 20pt;
+    font-size: 18pt;
 }
 .user-info .info-inputs input:nth-child(3){
     height: 8rem;
     font-size: 18pt;
 }
+.user-info .user-info-footer{
+    padding-top: 30px;
+}
 .user-info .user-info-footer button{
-    font-size: 20pt;
+    font-size: 18pt;
     border-style: solid;
     border-radius: 16pt;
     border-width: 1px;
     border-color: black;
 }
 /* PANTALLA DE BIENVENIDA */
+.welcome-text,
+.welcome-description-text,
+.welcome .logo,
+.welcome .welcome-btn{
+    background: rgba(229, 229, 229, 0.8);
+}
 .welcome-text h2{
     font-size: 50px;
     line-height: 78px;
     color: #000000;
     padding: 25px 10px;
-    
     }
 .welcome{
    display: block;
@@ -226,15 +239,15 @@ a{
    font-size: 25px;
    line-height: 39px;
    color: #000000;
-   background: white;
    padding: 25px 10px;
 }
 .welcome .button-go{
     margin-left: 30%;
+    margin-top: 20%;
 }
 /* MODALES */
-.modal{
-    /*display: none;*/
+/*.modal{
+    display: none;
     position: fixed;
     z-index: 1; 
     left: 0;
@@ -262,7 +275,7 @@ a{
     color: black;
     text-decoration: none;
     cursor: pointer;
-}
+}*/
 /*.modales{
     display: block;
 }
@@ -378,14 +391,18 @@ text-align: center;
 color: #000000;
 }*/
 /*formulario*/
-
+.formulario .form{
+    padding: 0px 0px 10px 10px;
+    text-align: center;
+}
 .formulario .form label{
-    font-size: 22pt;
+    font-size: 18pt;
 }
 .formulario .form input{
     border-style: none;
     border-radius: 16px;
-    font-size: 20pt;
+    font-size: 18pt;
+    margin-bottom: 12px;
 }
 .formulario .form-btn button{
     background: rgba(101, 166, 3);
@@ -396,13 +413,94 @@ color: #000000;
     font-size: 14pt;
     
 }
-.nav-timeline{
-   background: rgba(101, 166, 3, 0.8);
+
+/*Timeline*/
+.timeline{
+    background-color: rgba(101, 166, 3);
 }
+.timeline .nav{
+    height: 10%;
+    background-color: #d97904;
+}
+.timeline .nav .nav-btns li img,
+.timeline .nav .cajas .imagen{
+    width: 50px;
+    height: 50px;
+}
+.timeline .nav .nav-btns
+.nav-timeline{
+    background: rgba(101, 166, 3);
+}
+.timeline .nav .nav-btns .menu-btn{
+    margin-right: 24%;
+}
+.timeline .published-posts{
+    overflow: auto;
+    height: 67%;
+}
+
+/*.timeline .published-posts{
+    display: grid;
+    grid-template-columns: 30% 70%;
+   
+}*/
+.timeline .published-posts p{
+    grid-column-start: 2;
+}
+.timeline .new-post{
+    position: fixed;
+    height: 20%;
+    width: 100%;
+    border-top-style: solid;
+    border-color: rgba(101, 166, 3);
+    background-color: rgba(229, 229, 229);
+}
+.timeline .new-post img{
+    width: 50px;
+    padding-top: 10px;
+}
+.timeline .new-post .input{
+    font-size: 14pt;
+}
+.timeline .new-post button{
+    border-style: solid;
+    border-color: rgba(101, 166, 3);
+    border-radius: 4pt;
+    padding: 1% 4%;
+    font-size: 12pt;
+}
+.timeline .published-posts .post{
+    background-color: rgba(229, 229, 229);
+}
+.timeline .published-posts .post{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 80% 20%;
+    grid-template-areas: "user post"
+                         "user buttons"; 
+    padding: 10px 15px;
+    margin: 1%;
+}
+.timeline .published-posts .post img{
+    grid-area: user;
+    width: 40%;
+}
+.timeline .published-posts .post p{
+    grid-area: post;
+}
+.timeline .published-posts .post button{
+    grid-area: buttons;
+}
+.timeline .published-posts .post .delete-btn{
+    justify-self: center;
+}
+.timeline .published-posts .post .edit-btn{
+    justify-self: end;
+}
+
+/*Location*/
 .nav-timeline img{
-    padding: 0;
     border:0;
-    margin:0;
     width: 15%;
     height: 15%;
 }
@@ -412,60 +510,11 @@ color: #000000;
     border-radius: 16px;
     padding: 1%;
 }
-/*Timeline*/
-.nav{
-    height:60px;
-    background-color: #65A603;
+.nav-btns{
+    padding: 4px 8px;
 }
-.timeline .nav .menu-izq .imagen,
-.timeline .nav .menu-der .imagen,
-.timeline .nav .cajas .imagen{
-    width: 50px;
-    height: 50px;
-}
-.menu-izq{
-    list-style-type: none;
-    text-align: left;
-    margin: 0;
-    display: contents;
-}
-.menu-izq li{
+.nav-btns li{
     display: inline;
     text-align: left;
     margin: 0 10px 0 0;
-}
-.menu-der{
-    list-style-type: none;
-    text-align: right;
-    margin: 0;
-    display: block;
-    float: right;
-}
-.menu-der li{
-    display: inline;
-    text-align: right;
-    margin: 0 10px 0 0;
-}
-.cajas{
-    border-style: solid;
-    border-width: 1px 0 1px 0;
-    border-color: grey;
-    height: 200px;
-    display: grid;
-    grid-template-columns: 30% 70%;
-   
-}
-.cajas .imagen{
-    width: 50px;
-    height: 50px;
-    padding: 50px;
-    grid-column-start: 1;
-}
-
-.cajas p{
-    grid-column-start: 2;
-}
-.cajas .nombre{
-    grid-column-start: 2;
-    
 }

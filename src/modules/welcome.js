@@ -11,7 +11,9 @@ let welcome = {
         <section class="welcome-description-text">
           <p>Donde todos somos glotones y lo presumimos</p>
         </section>
-        <button  class="button-go" id = "button-go">Vamos!</button>
+        <section class="welcome-btn">
+          <button  class="button-go" id = "button-go">Vamos!</button>
+        </section>
     </section>
       `
       return view
