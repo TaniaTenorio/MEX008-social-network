@@ -20,35 +20,42 @@ let timeline = {
            </div>
       </main>
         `;
-       return view
-   }
-   , after_render: async () => {
-    // const signUp = document.getElementById("confirm-signup");
-    // signUp.addEventListener("click", () => window.firebaseFunction.register());
-    //  window.firebaseFunction.observe();
-    let locationBtn = document.getElementById("location-btn");
-    // const saveBtn = document.getElementById("save-btn");
-    locationBtn.addEventListener("click",()=>location.hash= "#/location");
-    document.getElementById("save-btn").addEventListener("click", window.firebaseFunction.savePost);
-    //pintando post que se van creando
-    let printPost = document.getElementById("published-posts");
-db.collection("newPosts").onSnapshot((querySnapshot) => {
-    printPost.innerHTML = "";
-    querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data().textPost}`);
-        printPost.innerHTML += `
-            <div class="post">
-                <img class="imagen" src="./Imagenes/usuario.png" />
-                <p>${doc.data().textPost}</p>
-                <button id="delete-btn" class="delete-btn">Eliminar</button>
-                <button class="edit-btn">Editar</button>
-            </div>
-        `;
-        document.getElementById("delete-btn").addEventListener("click", () =>  {
-            window.firebaseFunction.deletePost(doc.id);
+        return view
+   },
+   after_render: async () => {
+       // const signUp = document.getElementById("confirm-signup");
+       // signUp.addEventListener("click", () => window.firebaseFunction.register());
+       //  window.firebaseFunction.observe();
+       let locationBtn = document.getElementById("location-btn");
+       // const saveBtn = document.getElementById("save-btn");
+       locationBtn.addEventListener("click",()=>location.hash= "#/location");
+       document.getElementById("save-btn").addEventListener("click", window.firebaseFunction.savePost);
+       //pintando post que se van creando
+       let printPost = document.getElementById("published-posts");
+
+       await db.collection("newPosts").onSnapshot((querySnapshot) => {
+            printPost.innerHTML = "";
+            querySnapshot.forEach((doc) => {
+                // console.log(`${doc.id} => ${doc.data().textPost}`);
+                printPost.innerHTML += `
+                    <section class="post" >
+                        <img class="imagen" src="./Imagenes/usuario.png" />
+                        <p>${doc.data().textPost}</p>
+                        <button class="delete-btn" id="${doc.id}" data-id=${doc.id}>Eliminar</button>
+                        <button class="edit-btn" data-id=${doc.id}>Editar</button>
+                    </section>`;
+                
+            });
+            
         });
-    });
-});
+        printPost.addEventListener("click", (e) =>  {
+            if (e.target.tagName !== "BUTTON" || !e.target.classList.contains("delete-btn")) {
+                return;
+            }
+            console.log(!e.target.classList.contains("delete-btn"));
+            window.firebaseFunction.deletePost(e.target.dataset.id);
+            
+        });
    }
  }
  export default timeline;

@@ -443,10 +443,10 @@ color: #000000;
     display: grid;
     grid-template-columns: 30% 70%;
    
-}*/
+}
 .timeline .published-posts p{
     grid-column-start: 2;
-}
+}*/
 .timeline .new-post{
     position: fixed;
     height: 20%;

@@ -62,7 +62,7 @@ window.firebaseFunction = {
                 console.log(errorCode);
                 console.log(errorMessage);
             });
-            return alert("Login Exitoso")
+            return alert("Login Exitoso");
     },
     observe: () => {
         firebase.auth().onAuthStateChanged(function (user) {
@@ -88,7 +88,7 @@ window.firebaseFunction = {
             }
         });
 
-        return console.log("Observador activo")
+        return console.log("Observador activo");
     },
 
     // write: (user) => {
@@ -171,10 +171,10 @@ window.firebaseFunction = {
             });
     },
     deletePost: (id) => {
-    db.collection("newPosts").doc(id).delete().then(function() {
+    db.collection("newPosts").doc(id).delete().then(function () {
         console.log("Document successfully deleted!");
-    }).catch(function(error) {
+        }).catch(function (error) {
         console.error("Error removing document: ", error);
-    });
+        });
     }
 };
