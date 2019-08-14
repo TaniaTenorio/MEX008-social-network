@@ -67,3 +67,6 @@ Y consultar si hay eventos próximos, relacionados con la comida.
 
 [Marvel](https://marvelapp.com/42ie94h/screen/59883665)
 
+## Prototipo de alta fidelidad
+
+[Marvel](https://www.figma.com/proto/6NuxSKHA0Lz8jx2jBcDAUJ/FoodLova?node-id=2%3A10&scaling=scale-down)
