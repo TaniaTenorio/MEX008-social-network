@@ -158,6 +158,7 @@ window.firebaseFunction = {
         return alert("Login con Google exitoso");
     },
     savePost: () => {
+        let newPostsCollectionRef = db.collection("newPosts");
       db.collection("newPosts").add({
         textPost: document.getElementById("add-post").value
         })

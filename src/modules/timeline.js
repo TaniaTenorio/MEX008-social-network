@@ -1,8 +1,7 @@
 let timeline = {
     render : async () => {
-       let view =  /*html*/
-       `
-    <main class="timeline">
+       let view =
+       `<main class="timeline">
         <div class="nav">
             <ul class="nav-btns">
                 <li><img class="menu-btn" src="./Imagenes/menu.png" alt="imagen" /></li>
@@ -15,13 +14,10 @@ let timeline = {
         </div>
         <div class="new-post">
             <img class="imagen" src="./Imagenes/usuario.png" />
-              <input type="text" id="add-post" class="add-post" placeholder="Comenta">
-              <button id="save-btn">Publicar</button>
+            <textarea id="add-post" class="add-post" placeholder="Comenta"></textarea>
+            <button id="save-btn">Publicar</button>
         </div>
-      </main>
-
-        
-        `;
+      </main>`;
         return view
    },
    after_render: async () => {
@@ -73,7 +69,7 @@ let timeline = {
                         inputText.focus();
                         editButton.innerHTML = "Guardar";
                         return;
-                    } 
+                    }
                         console.log("cambiar input a true y cambiar boton Editar");
                         window.firebaseFunction.editPost(e.target.dataset.id, inputText.value);
                         inputText.disabled = true;
@@ -84,15 +80,12 @@ let timeline = {
             printPost.addEventListener("click", (e) =>  {
             console.log(e.target);
             console.log(!e.target.classList.contains("delete-btn"));
-            
                 if (e.target.tagName !== "BUTTON" || !e.target.classList.contains("delete-btn")){
                     // console.log(!e.target.classList.contains("delete-btn"));
                     console.log("hola");
-                    
                     return;
                 }
                 window.firebaseFunction.deletePost(e.target.dataset.id);
-                
             });
         });
     }
