@@ -75,17 +75,22 @@ let timeline = {
                         return;
                     } 
                         console.log("cambiar input a true y cambiar boton Editar");
-                        // window.firebaseFunction.editPost(e.target.dataset.id, inputText.value);
+                        window.firebaseFunction.editPost(e.target.dataset.id, inputText.value);
                         inputText.disabled = true;
                         editButton.innerHTML = "Editar";
                 })
             })
             printPost.addEventListener("click", (e) =>  {
             console.log(e.target);
-                if (e.target.tagName !== "BUTTON" && e.target.classList.contains("delete-btn")){
-                    console.log(!e.target.classList.contains("delete-btn"));
-                    window.firebaseFunction.deletePost(e.target.dataset.id);
+            console.log(!e.target.classList.contains("delete-btn"));
+            
+                if (e.target.tagName !== "BUTTON" || !e.target.classList.contains("delete-btn")){
+                    // console.log(!e.target.classList.contains("delete-btn"));
+                    console.log("hola");
+                    
+                    return;
                 }
+                window.firebaseFunction.deletePost(e.target.dataset.id);
                 
             });
         });
