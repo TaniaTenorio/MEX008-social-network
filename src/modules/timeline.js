@@ -38,7 +38,7 @@ let timeline = {
                 printPost.innerHTML += `
                     <section class="post" >
                         <img class="imagen" src="./Imagenes/usuario.png" />
-                        <input type="text" id="input-prueba" data-id=${doc.id} value="${doc.data().textPost}" disabled=${true}>
+                        <p data-id=${doc.id} value="${doc.data().textPost}" contenteditable=${false}> ${doc.data().textPost}</p>
                         <button class="delete-btn" id="${doc.id}" data-id=${doc.id}>Eliminar</button>
                         <button class="edit-btn" id="edit-btn" data-id=${doc.id}>Editar</button>
                     </section>`;
@@ -58,28 +58,31 @@ let timeline = {
 
                 // if (e.target.tagName === "BUTTON" && e.target.classList.contains("edit-btn")){
                     const editButton = document.querySelector(`button.edit-btn[data-id='${e.target.dataset.id}']`);
-                    const inputText = document.querySelector(`input[data-id='${e.target.dataset.id}']`);
+                    const inputText = document.querySelector(`p[data-id='${e.target.dataset.id}']`);
                     console.log(inputText);
+                    console.log(inputText.contentEditable);
 
 
                     // console.log(input.disabled);
-                    if (inputText.disabled &&  editButton.innerHTML === "Editar" ) {
+                    if (inputText.contentEditable &&  editButton.innerHTML === "Editar" ) {
                         console.log("cambiar input a false y cambiar boton Guardar");
-                        inputText.disabled = false;
+                        inputText.contentEditable = true;
                         inputText.focus();
                         editButton.innerHTML = "Guardar";
+                        
+                        
                         return;
                     }
                         console.log("cambiar input a true y cambiar boton Editar");
-                        window.firebaseFunction.editPost(e.target.dataset.id, inputText.value);
-                        inputText.disabled = true;
+                        window.firebaseFunction.editPost(e.target.dataset.id, inputText.textContent);
+                        inputText.contentEditable = false;
                         editButton.innerHTML = "Editar";
                 })
             })
 
             printPost.addEventListener("click", (e) =>  {
             console.log(e.target);
-            console.log(!e.target.classList.contains("delete-btn"));
+            // console.log(!e.target.classList.contains("delete-btn"));
                 if (e.target.tagName !== "BUTTON" || !e.target.classList.contains("delete-btn")){
                     // console.log(!e.target.classList.contains("delete-btn"));
                     console.log("hola");

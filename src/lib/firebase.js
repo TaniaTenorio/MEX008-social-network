@@ -166,6 +166,7 @@ window.firebaseFunction = {
                 // console.log("Document written with ID: ", docRef.id);
                 //limpiar el input despues de dar click
                 textPost: document.getElementById("add-post").value = "";
+                console.log("prueba")
             })
             .catch(function (error) {
                 console.error("Error adding document: ", error);

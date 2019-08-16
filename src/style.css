@@ -319,23 +319,21 @@ a{
     margin-left: 5px;
 }
 .timeline .published-posts .post{
-    background-color: rgba(229, 229, 229);
-}
-.timeline .published-posts .post{
-    height: 20%;
+    height: max-content;
     display: grid;
     grid-template-columns: 30% 70%;
-    grid-template-rows: auto 51%;
+    grid-template-rows: auto auto;
     grid-template-areas: "user post"
                          "user buttons"; 
     padding: 10px 15px;
     margin: 1%;
+    background-color: rgba(229, 229, 229);
 }
 .timeline .published-posts .post img{
     grid-area: user;
     width: 40%;
 }
-.timeline .published-posts .post input{
+.timeline .published-posts .post textarea{
     margin-bottom: 5%;
     grid-area: post;
     background-color: rgba(229, 229, 229);
@@ -349,7 +347,7 @@ a{
     border-style: solid;
     border-color: rgba(130, 130, 130);
     border-radius: 4px;
-    height: 80%;
+    height: 2rem;
     align-self: end;
 }
 .timeline .published-posts .post .delete-btn{
