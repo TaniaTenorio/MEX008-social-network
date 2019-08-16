@@ -475,7 +475,7 @@ color: #000000;
 .timeline .published-posts .post{
     display: grid;
     grid-template-columns: 30% 70%;
-    grid-template-rows: 80% 20%;
+    grid-template-rows: auto 51%;
     grid-template-areas: "user post"
                          "user buttons"; 
     padding: 10px 15px;
@@ -485,7 +485,8 @@ color: #000000;
     grid-area: user;
     width: 40%;
 }
-.timeline .published-posts .post p{
+.timeline .published-posts .post input{
+    margin-bottom: 5%;
     grid-area: post;
 }
 .timeline .published-posts .post button{
@@ -497,6 +498,43 @@ color: #000000;
 .timeline .published-posts .post .edit-btn{
     justify-self: end;
 }
+/* The Modal (background) */
+.timeline .modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
 /*Location*/
 .nav-timeline img{

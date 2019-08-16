@@ -13,12 +13,14 @@ let timeline = {
         </div>
         <div id ="published-posts" class="published-posts">
         </div>
-          <div class="new-post">
+        <div class="new-post">
             <img class="imagen" src="./Imagenes/usuario.png" />
               <input type="text" id="add-post" class="add-post" placeholder="Comenta">
               <button id="save-btn">Publicar</button>
-           </div>
+        </div>
       </main>
+
+        
         `;
         return view
    },
@@ -40,22 +42,53 @@ let timeline = {
                 printPost.innerHTML += `
                     <section class="post" >
                         <img class="imagen" src="./Imagenes/usuario.png" />
-                        <p>${doc.data().textPost}</p>
+                        <input type="text" id="input-prueba" data-id=${doc.id} value="${doc.data().textPost}" disabled=${true}>
                         <button class="delete-btn" id="${doc.id}" data-id=${doc.id}>Eliminar</button>
-                        <button class="edit-btn" data-id=${doc.id}>Editar</button>
+                        <button class="edit-btn" id="edit-btn" data-id=${doc.id}>Editar</button>
                     </section>`;
+            });
+        //     printPost.addEventListener("click", (e) =>  {
+        //         if (e.target.tagName !== "BUTTON" || !e.target.classList.contains("delete-btn") || !e.target.classList.contains("edit-btn")) {
+        //             return;
+        //         }
+        //         console.log(!e.target.classList.contains("delete-btn"));
+        //         window.firebaseFunction.deletePost(e.target.dataset.id);
+        //         console.log("si funciona");
+        //     document.querySelector("#input-prueba").disabled=false;
+        //     });
+            const inputText = Array.from(document.querySelectorAll(`button.edit-btn`));
+            inputText.forEach( item => {
+                item.addEventListener('click', (e) => {
+
+                // if (e.target.tagName === "BUTTON" && e.target.classList.contains("edit-btn")){
+                    const editButton = document.querySelector(`button.edit-btn[data-id='${e.target.dataset.id}']`);
+                    const inputText = document.querySelector(`input[data-id='${e.target.dataset.id}']`);
+                    console.log(inputText);
+
+
+                    // console.log(input.disabled);
+                    if (inputText.disabled &&  editButton.innerHTML === "Editar" ) {
+                        console.log("cambiar input a false y cambiar boton Guardar");
+                        inputText.disabled = false;
+                        inputText.focus();
+                        editButton.innerHTML = "Guardar";
+                        return;
+                    } 
+                        console.log("cambiar input a true y cambiar boton Editar");
+                        // window.firebaseFunction.editPost(e.target.dataset.id, inputText.value);
+                        inputText.disabled = true;
+                        editButton.innerHTML = "Editar";
+                })
+            })
+            printPost.addEventListener("click", (e) =>  {
+            console.log(e.target);
+                if (e.target.tagName !== "BUTTON" && e.target.classList.contains("delete-btn")){
+                    console.log(!e.target.classList.contains("delete-btn"));
+                    window.firebaseFunction.deletePost(e.target.dataset.id);
+                }
                 
             });
-            
         });
-        printPost.addEventListener("click", (e) =>  {
-            if (e.target.tagName !== "BUTTON" || !e.target.classList.contains("delete-btn")) {
-                return;
-            }
-            console.log(!e.target.classList.contains("delete-btn"));
-            window.firebaseFunction.deletePost(e.target.dataset.id);
-            
-        });
-   }
+    }
  }
  export default timeline;

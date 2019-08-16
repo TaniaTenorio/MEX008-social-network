@@ -147,3 +147,17 @@ logOffBtn.addEventListener("click",logOff);
 //     logOff,
 //     verify,
 // };
+function armarPeda(amigos,lugar){
+	let seArmoLaPeda = false;
+		if(amigos.length > 0){
+			for(i=0; i<amigos.length; i++){
+				if(llamar(amigos[i],lugar) == "SI"){
+					let cervezas = amigos[i].SeToma;
+					comprar(cervezas*2);
+					seArmoLaPeda = true;
+                };
+            };
+            console.log(seArmoLaPeda);
+        };
+        return console.log(armarPeda(2,"sushi"));
+    }

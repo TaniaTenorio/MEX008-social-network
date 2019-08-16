@@ -176,5 +176,20 @@ window.firebaseFunction = {
         }).catch(function (error) {
         console.error("Error removing document: ", error);
         });
+    },
+    //funcion de editar
+    editPost: async (id, textPost) => {  
+        // Set the "capital" field of the city 'DC'
+         await db.collection("newPosts").doc(id).update({ 
+            textPost
+        });
+        // .then(function () {
+        //     console.log("Document successfully updated!");
+        // })
+        // .catch(function (error) {
+        //     // The document probably doesn't exist.
+        //     console.error("Error updating document: ", error);
+        // });
+
     }
 };
