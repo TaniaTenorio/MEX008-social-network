@@ -56,8 +56,8 @@ let timeline = {
         //         console.log("si funciona");
         //     document.querySelector("#input-prueba").disabled=false;
         //     });
-            const inputText = Array.from(document.querySelectorAll(`button.edit-btn`));
-            inputText.forEach( item => {
+            const botonesEdit = Array.from(document.querySelectorAll(`button.edit-btn`));
+            botonesEdit.forEach( item => {
                 item.addEventListener('click', (e) => {
 
                 // if (e.target.tagName === "BUTTON" && e.target.classList.contains("edit-btn")){
@@ -80,6 +80,7 @@ let timeline = {
                         editButton.innerHTML = "Editar";
                 })
             })
+
             printPost.addEventListener("click", (e) =>  {
             console.log(e.target);
             console.log(!e.target.classList.contains("delete-btn"));
