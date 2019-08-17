@@ -16,6 +16,7 @@ let timeline = {
             <img class="imagen" src="./Imagenes/usuario.png" />
             <textarea id="add-post" class="add-post" placeholder="Comenta"></textarea>
             <button id="save-btn">Publicar</button>
+            <button id="log-off">Cerrar sesión</button>
         </div>
       </main>`;
         return view
@@ -26,10 +27,12 @@ let timeline = {
        //  window.firebaseFunction.observe();
        let locationBtn = document.getElementById("location-btn");
        // const saveBtn = document.getElementById("save-btn");
-       locationBtn.addEventListener("click",()=>location.hash= "#/location");
+       locationBtn.addEventListener("click", () => window.history.forward());//location.hash= "#/location");
        document.getElementById("save-btn").addEventListener("click", window.firebaseFunction.savePost);
        //pintando post que se van creando
        let printPost = document.getElementById("published-posts");
+       const logOffBtn = document.getElementById("log-off");
+       logOffBtn.addEventListener("click",window.firebaseFunction.logOff);
 
        await db.collection("newPosts").onSnapshot((querySnapshot) => {
             printPost.innerHTML = "";
@@ -43,34 +46,18 @@ let timeline = {
                         <button class="edit-btn" id="edit-btn" data-id=${doc.id}>Editar</button>
                     </section>`;
             });
-        //     printPost.addEventListener("click", (e) =>  {
-        //         if (e.target.tagName !== "BUTTON" || !e.target.classList.contains("delete-btn") || !e.target.classList.contains("edit-btn")) {
-        //             return;
-        //         }
-        //         console.log(!e.target.classList.contains("delete-btn"));
-        //         window.firebaseFunction.deletePost(e.target.dataset.id);
-        //         console.log("si funciona");
-        //     document.querySelector("#input-prueba").disabled=false;
-        //     });
             const botonesEdit = Array.from(document.querySelectorAll(`button.edit-btn`));
             botonesEdit.forEach( item => {
                 item.addEventListener('click', (e) => {
-
-                // if (e.target.tagName === "BUTTON" && e.target.classList.contains("edit-btn")){
                     const editButton = document.querySelector(`button.edit-btn[data-id='${e.target.dataset.id}']`);
                     const inputText = document.querySelector(`p[data-id='${e.target.dataset.id}']`);
                     console.log(inputText);
                     console.log(inputText.contentEditable);
-
-
-                    // console.log(input.disabled);
                     if (inputText.contentEditable &&  editButton.innerHTML === "Editar" ) {
                         console.log("cambiar input a false y cambiar boton Guardar");
                         inputText.contentEditable = true;
                         inputText.focus();
                         editButton.innerHTML = "Guardar";
-                        
-                        
                         return;
                     }
                         console.log("cambiar input a true y cambiar boton Editar");

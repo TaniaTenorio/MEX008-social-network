@@ -8,31 +8,48 @@ a{
     text-decoration-color: #000000;
 }
 .content{
-    height: 640px;
+    height: 100vh;
 }
 .intro,
+.welcome{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "logo"
+                         "text"
+                         "buttons";
+    background-image: url(./Imagenes/Fondo.png);
+    height: 100%;
+}
 .intro .btns,
 .log-in,
-.sign-in,
-.welcome,
-.formulario{
+.sign-in
+{
     background-image: url(./Imagenes/Fondo.png);
     background-repeat: repeat-x;
-    height: 100%;
 }
 .log-in .log-in-btns,
 .form-btn,
 .user-info,
 .timeline,
-.welcome .welcome-btn,
 .location{
     height: 100%;
 }
-.intro .logo,
+.intro .logo{
+    grid-area: logo;
+    background: rgba(217, 4, 22, 0.8);
+
+}
+.intro .intro-text{
+    grid-area: text;
+    background: rgba(217, 4, 22, 0.8);
+}
+.intro .btns{
+    grid-area: buttons;
+    background: rgba(217, 4, 22, 0.8);
+}
 .log-in .logo,
-.intro .intro-text,
 .log-in .log-in-data,
-.intro .btns,
+
 .log-in .log-in-btns,
 .sign-in .header{
     background: rgba(217, 4, 22, 0.8);
@@ -42,7 +59,15 @@ a{
 .formulario .form-btn{
     background: rgba(101, 166, 3, 0.8);
 }
-
+.formulario{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "logo"
+                         "form"
+                         "button";
+    background-image: url(./Imagenes/Fondo.png);
+    height: 100%;
+}
 .formulario .form-btn a{
     background-color: rgba(101, 166, 3);
     border-radius: 16px;
@@ -220,10 +245,16 @@ a{
     border-color: black;
 }
 /* PANTALLA DE BIENVENIDA */
-.welcome-text,
-.welcome-description-text,
-.welcome .logo,
+.welcome .welcome-text{
+    grid-area: logo;
+    background: rgba(229, 229, 229, 0.8);
+}
+.welcome-description-text{
+    grid-area: text;
+    background: rgba(229, 229, 229, 0.8);
+}
 .welcome .welcome-btn{
+    grid-area: buttons;
     background: rgba(229, 229, 229, 0.8);
 }
 .welcome-text h2{
@@ -232,9 +263,6 @@ a{
     color: #000000;
     padding: 25px 10px;
     }
-.welcome{
-   display: block;
-}
 .welcome-description-text p{
    font-size: 25px;
    line-height: 39px;
@@ -243,7 +271,7 @@ a{
 }
 .welcome .button-go{
     margin-left: 30%;
-    margin-top: 20%;
+    
 }
 /*formulario*/
 .formulario .form{
@@ -271,18 +299,21 @@ a{
 /*Timeline*/
 .timeline{
     background-color: rgba(101, 166, 3);
+    display: grid;
+    grid-template-rows: 15% auto 20%;
+    grid-template-areas: "nav-bar"
+                         "content"
+                         "footer";
 }
-.timeline .nav,
-.location-places .nav-timeline{
-    height: 10%;
+.timeline .nav{
+    grid-area: nav-bar;
     background-color: #d97904;
 }
+
 .timeline .nav .nav-btns li img,
 .timeline .nav .cajas .imagen{
-    width: 50px;
-    height: 50px;
+    width: 3rem;
 }
-.timeline .nav .nav-btns
 .nav-timeline{
     background: rgba(101, 166, 3);
 }
@@ -291,13 +322,11 @@ a{
     margin-right: 24%;
 }
 .timeline .published-posts{
+    grid-area: content;
     overflow: auto;
-    height: 67%;
 }
 .timeline .new-post{
-    position: fixed;
-    height: 20%;
-    width: 100%;
+    grid-area: footer;
     border-top-style: solid;
     border-color: rgba(101, 166, 3);
     background-color: rgba(229, 229, 229);
@@ -351,6 +380,7 @@ a{
     border-radius: 4px;
     height: 2rem;
     align-self: end;
+    margin-top: 10px;
 }
 .timeline .published-posts .post .delete-btn{
     justify-self: center;
@@ -358,18 +388,23 @@ a{
 .timeline .published-posts .post .edit-btn{
     justify-self: end;
 }
+
+/*Location*/
+.location-places .nav-timeline{
+    height: 10%;
+    background-color: #d97904;
+}
+.location-places .nav-timeline img{
+    border:0;
+    width: 15%;
+    height: 15%;
+}
 .location-places .location-map figure iframe{
     width: 100%;
 
 }
 .location-places .location-map figure{
     margin: 10px;
-}
-/*Location*/
-.location-places .nav-timeline img{
-    border:0;
-    width: 15%;
-    height: 15%;
 }
 .nearby-places .opinions-button{
     background:#D97904; 

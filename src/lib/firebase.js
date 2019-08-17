@@ -193,5 +193,15 @@ window.firebaseFunction = {
         //     console.error("Error updating document: ", error);
         // });
 
+    },
+    logOff: () => {
+        firebase.auth().signOut()
+        .then(()=> {
+    console.log("saliendo...");
+    location.hash= "#/intro";
+        })
+        .catch((error) => {
+    console.log(error);
+        });
     }
 };

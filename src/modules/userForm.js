@@ -6,7 +6,7 @@ let userform = {
           <div class="imagen">
             <img src="./Imagenes/Logo_verde.png" alt="Logo.png">
           </div>
-          <div class="form">
+          <form class="form">
              <label for="username">Nombre de usuario</label><br>
              <input type="text" id="username" name="Usuario" class="text"><br>
              <label for="email">Correo Electronico</label><br>
@@ -15,7 +15,7 @@ let userform = {
              <input type="password" id="create-password" name="contraseña" class="text"><br>
              <label for="confirm">Confirma tu contraseña</label><br>
              <input type="password" id="confirm-password" name="confirma" class="text"><br>
-          </div>
+          </form>
           <div class="form-btn">
           <button id= "confirm-signup">Siguiente</button>
           </div>

@@ -6,7 +6,7 @@
 
 const signUp = document.getElementById("confirm-signup");
 
-const logOffBtn = document.getElementById("log-off");
+
 
 "use strict";
 // import Navbar from './modules/navbar.js'
@@ -112,16 +112,6 @@ window.addEventListener('load', router); // The event occurs when an object has 
 //     }
 // };
 
-const logOff = () => {
-    firebase.auth().signOut()
-    .then(()=> {
-console.log("saliendo...");
-    })
-    .catch((error) => {
-console.log(error);
-    });
-};
-logOffBtn.addEventListener("click",logOff);
 
 
 
@@ -147,17 +137,3 @@ logOffBtn.addEventListener("click",logOff);
 //     logOff,
 //     verify,
 // };
-function armarPeda(amigos,lugar){
-	let seArmoLaPeda = false;
-		if(amigos.length > 0){
-			for(i=0; i<amigos.length; i++){
-				if(llamar(amigos[i],lugar) == "SI"){
-					let cervezas = amigos[i].SeToma;
-					comprar(cervezas*2);
-					seArmoLaPeda = true;
-                };
-            };
-            console.log(seArmoLaPeda);
-        };
-        return console.log(armarPeda(2,"sushi"));
-    }

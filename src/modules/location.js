@@ -20,7 +20,7 @@ let location = {
         <h4>Tacos Lety</h4>
         <p>puntuaciones: 4.0</p>
        <!--  Cambiar el boton por una <a></a>  -->
-        <button class="opinions-button">opiniones</button> 
+        <button class="opinions-button">opiniones</button>
         <p>cierra a las: 21:00</p>
 
       </section>
@@ -36,11 +36,12 @@ let location = {
 
     </section>
   </main>
-       
         `
         return view
     },
-    after_render : async () => {}
+    after_render : async () => {
+      console.log(window.history);
+    }
   }
 
   export default location;
