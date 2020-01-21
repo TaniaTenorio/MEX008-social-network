@@ -1,68 +1,77 @@
 # Creando una Red Social
-# FoodLova
-​
+
+## FoodLova
+
 ## Índice
-​
+
 * [1. Introducción](#Introduccón)
 * [2. Definición del producto](#Definicion-del-producto)
 * [3. User persona](#User-persona)
 * [4. Historia de usuario](#Historia-de-usuario)
-​
-​
+
 ## Introducción
 ​
 FoodLova es la red social para tod@s los amantes de la comida en la CDMX. La red que te permite conectar con tus amigos o FoodLovas  para saber qué lugares frecuentan cuando van a comer, calmar la tripa y saciar ese antojo mortal. 
 ​
-En FoodLova podrás compartir con tus mejores recomendaciones y las peores; revisar cuáles son los lugares más frecuentados por tus amigos y por supuesto, presumir esa torta gigante que cenaste en lunes por la noche. FoodLova es la red de confianza para saber con seguridad cuáles tacos realmente van a calmar la tripa sin enflacar tu cartera.
+En FoodLova podrás compartir tus mejores recomendaciones y las peores; revisar cuáles son los lugares más frecuentados por tus amigos y por supuesto, presumir esa torta gigante que cenaste en lunes por la noche. FoodLova es la red de confianza para saber con seguridad cuáles tacos realmente van a calmar la tripa sin enflacar tu cartera.
 ​
+## Definición del producto
 ​
-​
-## Defición del producto
-​
-Se realizaron 39 encuestas las cuelaes nos ayudaron a ver si formarian parte de una red de glotones, y que 
-tan seguido comian fuera de casa, la mayoria fueron mujeres, y la mayoria asiste a la escuela, lo cual es 
-más facil que coman fuera de casa y tan seguido.
+Se realizaron 39 encuestas que nos permitieron conocer con qué probabilidad los usuarios serían parte de una red de glotones, y con qué frecuencia comían fuera de casa.
+La mayoría de nuestros encuestados fueron mujeres, que asisten a la escuela, y comen fuera de casa la mayoría de las veces.
 ​
 ![edad](./src/Imagenes/edad.png)
 ​
-El 33.3% de los usuarios se encuentran entre los 21-30 de edad.
+El 33.3% de los encuestados se encuentran entre los 21-30 de edad.
 ​
 ![genero](./src/Imagenes/genero.png)
 ​
-El 84.6% de los usuarios son mujeres miestras que el 10.3% son hombres
+El 84.6% de los encuestados son mujeres miestras que el 10.3% son hombres
 ​
 ![fuera](./src/Imagenes/fuera.png)
 ​
-El 66.7% de los usarios comen de 1 a 3 veces por semana fuera de sus casas.
+El 66.7% de los encuestados comen de 1 a 3 veces por semana fuera de sus casas.
 ​
 ![red](./src/Imagenes/red.png)
-El 51.3% de los usuarios les interesaria formar parte de una red social para amantes de la comida
+
+El 51.3% de los encuestados les interesaria formar parte de una red social para amantes de la comida
 ​
 ![ocupación](./src/Imagenes/ocupación.png)
 ​
-El 28.2% de nuestros usuarios son estudiantes por lo cual no les da tiempo de comer en casa o
-preparse algo de comida para llevar.
-​
+El 28.2% de nuestros encuestados son estudiantes por lo cual no les da tiempo de comer en casa o preparse algo de comida para llevar.
 ​
 ## User persona
 ​
-[user](./src/Imagenes/user.jpg)
-​
-​
-## Historia de usuario
-​
-Yo usuaria busco una aplicaón donde pueda publicar comentarios de los restaurantes o puestos de comida que frecuenta día a día y dar recomendaciones a los integrantes de la red.
-​
-*Criterio de Aceptacón:*
-​
-la pagina web debera deja que consulte los lugares que más se han frecuentado durante la semana y filtrarlos por tipo de comida.  comida china, comida italiana, garnachas, etc
-​
-*Definición de Terminado:*
-​
-Al ingresar a la pagína me dejara hacer que yo pueda guardar mis lugares favoritos
-Y consultar si hay eventos próximos, relacionados con la comida.
-​
+![user](./src/Imagenes/user.jpg)
 
+Fernanda es una estudiante de 25 años, actualmente se encuentra cursando el bootcamp de Laboratoria. Debido a que Fernanda no cuenta con mucho tiempo ni dinero para hacer sus compras en el super y prepararse su comida en casa, ella come con mucha frecuencia en la calle, en lugares que se encuentran cerca de su lugar de estudio.
+
+
+## Historia de usuario
+
+Como usuaria quiero tener la opción de crear una cuenta nueva o iniciar sesión con una cuenta ya existente
+
+Como usuaria quiero poder crear mi cuenta utilizando mis datos de Facebook, Google o con mi correo electrónico
+
+Como usuario quiero iniciar sesión con las opciones de Facebook, Google o mi correo electrónico.
+
+Como usuaria quiero poder ver el muro y las publicaciones recientes.
+
+Como usuario quiero poder hacer una publicación en el muro de mi red.
+
+Como usuario quiero poder subir fotos o imágenes para compartir mi experiencia.
+
+Como usuario quiero tener la opción de editar o eliminar alguna publicación que haya hecho.
+
+Como usuaria quiero darle like a una publicación de mi agrado.
+
+Como usuaria quiero poder agregar algún comentario en publicaciones de amigos dentro de mi red.
+
+Como usuaria quiero poder ver en un mapa los lugares cercanso para ir a comer.
+
+Como usuaria quiero poder filtrar mi búsqueda, según el tipo de comida.
+
+​
 ## Prototipo de baja fidelidad
 
 [Marvel](https://marvelapp.com/42ie94h/screen/59883665)
