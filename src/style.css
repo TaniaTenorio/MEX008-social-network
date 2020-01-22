@@ -1,46 +1,169 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Mitr', sans-serif;
 }
+a{
+    text-decoration: none;
+    text-decoration-color: #000000;
+}
+.content{
+    height: 100vh;
+}
+.intro,
+.welcome{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "logo"
+                         "text"
+                         "buttons";
+    background-image: url(./Imagenes/Fondo.png);
+    height: 100%;
+}
+.intro .btns,
 .log-in,
-.sign-in{
-    background-image: url(/src/Imagenes/Fondo.png);
+.sign-in
+{
+    background-image: url(./Imagenes/Fondo.png);
     background-repeat: repeat-x;
 }
+.log-in .log-in-btns,
+.form-btn,
+.user-info,
+.timeline,
+.location{
+    height: 100%;
+}
+.intro .logo{
+    grid-area: logo;
+    background: rgba(217, 4, 22, 0.8);
+
+}
+.intro .intro-text{
+    grid-area: text;
+    background: rgba(217, 4, 22, 0.8);
+}
+.intro .btns{
+    grid-area: buttons;
+    background: rgba(217, 4, 22, 0.8);
+}
 .log-in .logo,
-.log-in .intro,
-.log-in .btns,
+.log-in .log-in-data,
+
+.log-in .log-in-btns,
 .sign-in .header{
     background: rgba(217, 4, 22, 0.8);
 }
-.user-info .user-info-header{
+.user-info .user-info-header, .formulario .imagen,
+.formulario .form,
+.formulario .form-btn{
     background: rgba(101, 166, 3, 0.8);
 }
+.formulario{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "logo"
+                         "form"
+                         "button";
+    background-image: url(./Imagenes/Fondo.png);
+    height: 100%;
+}
+.formulario .form-btn a{
+    background-color: rgba(101, 166, 3);
+    border-radius: 16px;
+    padding: 7px 25px;
+
+}
+.intro .logo img,
 .log-in .logo img,
-.sign-in .header .logo{
+.sign-in .header .logo,
+.formulario .imagen img,
+.welcome .logo img{
     width: 10rem;
 }
-.log-in .intro p{
+.intro .intro-text{
+    padding: 15px 10px;
+}
+.intro .logo,
+.log-in .logo,
+.log-in .log-in-data,
+.log-in .log-in-btns,
+.sign-in .header,
+.sign-in .sign-in-options,
+.user-info .user-info-footer,
+.intro .btns,
+.formulario .imagen,
+.formulario .form-btn,
+.welcome .welcome-text h2,
+.welcome .logo,
+.welcome .welcome-description-text p,
+.welcome .button-go{
+    text-align: center;
+}
+.intro .intro-text p{
     color: white;
     font-family: 'Mitr', sans-serif;
-    font-size: 24pt;
+    font-size: 20pt;
     text-align: center;
-    padding: 30px 15px;
+    padding: 20px 0px;
 }
-.log-in .btns button{
+.intro .btns button,
+.welcome button{
     background: #D90416;
     border-radius: 16px;
     color: white;
     border: none;
     font-family: 'Mitr', sans-serif;
-    font-size: 24pt;
+    font-size: 18pt;
     padding: 7px 25px;
 }
-.log-in .btns p{
+.intro .btns button:hover{
+    cursor: pointer;
+}
+.intro .btns p{
+    color: white;
+    font-family: 'Mitr', sans-serif;
+    font-size: 18pt;
+    margin: 1rem;
+}
+.log-in .log-in-data h3{
     color: white;
     font-family: 'Mitr', sans-serif;
     font-size: 24pt;
-    margin: 2rem;
+    text-align: center;
+    padding: 0;
+}
+.log-in .log-in-data label{
+    color: white;
+    font-family: 'Mitr', sans-serif;
+    font-size: 16pt;
+    text-align: center;
+}
+.log-in .log-in-data input{
+    border: none;
+    border-radius: 16pt;
+    font-size: 16pt;
+}
+.log-in .log-in-data button{
+    background: #D90416;
+    border: none;
+    border-radius: 16pt;
+    color: white;
+    padding: 7px 25px;
+    font-size: 14pt;
+    margin: 10px;
+
+}
+
+.log-in .log-in-btns p{
+    color: white;
+    font-family: 'Mitr', sans-serif;
+    font-size: 16pt;
+    text-align: center;
+    padding: 10px;
+}
+.log-in .log-in-btns img{
+    width: 5rem;
 }
 .sign-in .header .small-imgs{
     height: 2rem;
@@ -54,6 +177,11 @@
     font-family: 'Mitr', sans-serif;
     font-size: 27pt;
     text-align: center;
+    color: black;
+    padding: 0.5em;
+}
+.sign-in .sign-in-options img{
+    width: 5rem;
 }
 .sign-in .sign-in-options button,
 .user-info .user-info-footer button{
@@ -70,6 +198,14 @@
 .sign-in .sign-in-options button img{
     width: 3rem;
 }
+.sign-in .modal-imgs{
+    margin: 15px auto;
+}
+.sign-in .sign-in-options .modal-options p,
+.sign-in .sign-in-options .modal-options a{
+    font-size: 14pt;
+    padding-bottom: 10px;
+}
 .sign-in .sign-in-footer,
 .user-info .user-info-footer i{
     font-size: 20pt;
@@ -80,211 +216,214 @@
 .user-info .user-info-header img{
     
 }
+.user-info .info-inputs{
+    padding: 15px;
+    text-align: center;
+}
 .user-info .info-inputs label{
     font-family: 'Mitr', sans-serif;
-    font-size: 20pt;
+    font-size: 18pt;
     margin-bottom: 5px;
 }
 .user-info .info-inputs input{
     border: none;
     border-radius: 16pt;
-    font-size: 20pt;
+    font-size: 18pt;
 }
 .user-info .info-inputs input:nth-child(3){
     height: 8rem;
     font-size: 18pt;
 }
+.user-info .user-info-footer{
+    padding-top: 30px;
+}
 .user-info .user-info-footer button{
-    font-size: 20pt;
+    font-size: 18pt;
     border-style: solid;
     border-radius: 16pt;
     border-width: 1px;
     border-color: black;
 }
 /* PANTALLA DE BIENVENIDA */
+.welcome .welcome-text{
+    grid-area: logo;
+    background: rgba(229, 229, 229, 0.8);
+}
+.welcome-description-text{
+    grid-area: text;
+    background: rgba(229, 229, 229, 0.8);
+}
+.welcome .welcome-btn{
+    grid-area: buttons;
+    background: rgba(229, 229, 229, 0.8);
+}
 .welcome-text h2{
-    position: relative;
-    width: 309px;
-    height: 166px;
-    /* left: 29px;
-    top: 30px; */
-    display: block;
-    font-family: Mitr;
-    font-style: normal;
-    font-weight: normal;
     font-size: 50px;
     line-height: 78px;
-    text-align: center;
     color: #000000;
+    padding: 25px 10px;
     }
-    .logo img{
-       position: relative;
-       width: 157px;
-       height: 157px;
-    /*    left: 102px;
-       top: 207px */;
-    }
-    .welcome{
-       display: block;
-    }
-    .welcome-description-text p{
-       position: relative;
-       width: 270px;
-       height: 166px;
-       /* left: 53px;
-       top: 371px;
-        */
-       font-family: Mitr;
-       font-style: normal;
-       font-weight: normal;
-       font-size: 25px;
-       line-height: 39px;
-       text-align: center;
-       color: #000000;
-    }
-    .button-go{
-       position: relative;
-    width: 153px;
-    height: 51px;
-    /* left: 107px;
-    top: 518px; */
-    background: rgba(217, 4, 22, 0.8);
+.welcome-description-text p{
+   font-size: 25px;
+   line-height: 39px;
+   color: #000000;
+   padding: 25px 10px;
+}
+.welcome .button-go{
+    margin-left: 30%;
+    
+}
+/*formulario*/
+.formulario .form{
+    padding: 0px 0px 10px 10px;
+    text-align: center;
+}
+.formulario .form label{
+    font-size: 18pt;
+}
+.formulario .form input{
+    border-style: none;
     border-radius: 16px;
-    }
-    /* MODALES */
-    .box-logo{
-       position: relative;
-    width: 360px;
-    height: 209px;
-    /* left: 1px;
-    top: 6px; */
-    background: rgba(217, 4, 22, 0.8);
-    }
-    .box-logo .logo img{
-       position: relative;
-       width: 157px;
-       height: 157px;
-       /* left: 102px;
-       top: 207px;
-        */
-    }
-    .box-logo .row-images{
-       position: relative;
-    width: 35px;
-    height: 35px;
-    /* left: 302px;
-    top: 169px; */
-    }
-    .input-modal{
-       position: relative;
-    width: 214px;
-    height: 38px;
-    /* left: 71px;
-    top: 481px;
-    */
-    border: 1px solid #000000;
-    box-sizing: border-box;
+    font-size: 18pt;
+    margin-bottom: 12px;
+}
+.formulario .form input:valid + .formulario .form div.invalid{
+    visibility: hidden;
+}
+.formulario .form input:invalid + .formulario .form div.invalid{
+    visibility: visible;
+
+}
+.formulario .form-btn button{
+    background: rgba(101, 166, 3);
+    border: none;
+    border-radius: 16pt;
+    color: white;
+    padding: 7px 25px;
+    font-size: 14pt;
+    
+}
+/*Timeline*/
+.timeline{
+    background-color: rgba(101, 166, 3);
+    display: grid;
+    grid-template-rows: 15% auto 20%;
+    grid-template-areas: "nav-bar"
+                         "content"
+                         "footer";
+}
+.timeline .nav{
+    grid-area: nav-bar;
+    background-color: #d97904;
+}
+
+.timeline .nav .nav-btns li img,
+.timeline .nav .cajas .imagen{
+    width: 3rem;
+}
+.nav-timeline{
+    background: rgba(101, 166, 3);
+}
+.timeline .nav .nav-btns .menu-btn,
+.location-places .nav-timeline .menu-btn{
+    margin-right: 24%;
+}
+.timeline .published-posts{
+    grid-area: content;
+    overflow: auto;
+}
+.timeline .new-post{
+    grid-area: footer;
+    border-top-style: solid;
+    border-color: rgba(101, 166, 3);
+    background-color: rgba(229, 229, 229);
+    padding: 0px 0px 0px 10px;
+}
+.timeline .new-post img{
+    width: 50px;
+    padding-top: 10px;
+}
+.timeline .new-post .input{
+    font-size: 14pt;
+    margin-left: 10px;
+    font-size: 10pt;
+}
+.timeline .new-post button{
+    border-style: solid;
+    border-color: rgba(101, 166, 3);
+    border-radius: 4pt;
+    padding: 1% 4%;
+    font-size: 12pt;
+    margin-left: 5px;
+}
+.timeline .published-posts .post{
+    height: max-content;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: auto auto;
+    grid-template-areas: "user post"
+                         "user buttons"; 
+    padding: 10px 15px;
+    margin: 1%;
+    background-color: rgba(229, 229, 229);
+}
+.timeline .published-posts .post img{
+    grid-area: user;
+    width: 40%;
+}
+.timeline .published-posts .post textarea{
+    margin-bottom: 5%;
+    grid-area: post;
+    background-color: rgba(229, 229, 229);
+    border: none;
+    font-size: 16pt;
+    color: black;
+}
+.timeline .published-posts .post button{
+    grid-area: buttons;
+    padding: 0px 8px;
+    border-style: solid;
+    border-color: rgba(130, 130, 130);
+    border-radius: 4px;
+    height: 2rem;
+    align-self: end;
+    margin-top: 10px;
+}
+.timeline .published-posts .post .delete-btn{
+    justify-self: center;
+}
+.timeline .published-posts .post .edit-btn{
+    justify-self: end;
+}
+
+/*Location*/
+.location-places .nav-timeline{
+    height: 10%;
+    background-color: #d97904;
+}
+.location-places .nav-timeline img{
+    border:0;
+    width: 15%;
+    height: 15%;
+}
+.location-places .location-map figure iframe{
+    width: 100%;
+
+}
+.location-places .location-map figure{
+    margin: 10px;
+}
+.nearby-places .opinions-button{
+    background:#D97904; 
+    font-family: 'Mitr', sans-serif;
     border-radius: 16px;
-       /* MODAL FACEBOOK */
-    .box-login-facebook{
-       display: block
-    }
-    .form-facebook p{
-       position: relative;
-    width: 271px;
-    height: 60px;
-    /* left: 43px;
-    top: 235px; */
-    font-family: Mitr;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 26px;
-    line-height: 41px;
-    text-align: center;
-    color: #000000;
-    }
-    .email-facebook{
-       position: relative;
-    width: 128px;
-    height: 38px;
-    /* left: 114px;
-    top: 341px; */
-    font-family: Mitr;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 26px;
-    line-height: 41px;
-    text-align: center;
-    color: #000000;
-    }
-    .password-facebook{
-       position: relative;
-    width: 163px;
-    height: 38px;
-    /* left: 97px;
-    top: 435px; */
-    font-family: Mitr;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 26px;
-    line-height: 41px;
-    text-align: center;
-    color: #000000;
-    }
-    .input-modals{
-       position: relative;
-    width: 214px;
-    height: 38px;
-    /* left: 71px;
-    top: 481px; */
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    border-radius: 16px;
-    }
-    /* MODAL GOOGLE */
-    .box-login-google{
-       display: block
-    }
-    .form-google p{
-       position: relative;
-    width: 271px;
-    height: 60px;
-    /* left: 43px;
-    top: 235px; */
-    font-family: Mitr;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 26px;
-    line-height: 41px;
-    text-align: center;
-    color: #000000;
-    }
-    .email-modal-google{
-       position: relative;
-    width: 128px;
-    height: 38px;
-    /* left: 114px;
-    top: 341px;
-    */
-    font-family: Mitr;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 26px;
-    line-height: 41px;
-    text-align: center;
-    color: #000000;
-    }
-    .password-modal-google{
-       position: relative;
-    width: 163px;
-    height: 38px;
-    /* left: 97px;
-    top: 435px; */
-    font-family: Mitr;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 26px;
-    line-height: 41px;
-    text-align: center;
-    color: #000000;
-    }
+    padding: 1%;
+}
+.nav-btns{
+    padding: 4px 8px;
+}
+.nav-btns li{
+    display: inline;
+    text-align: left;
+    margin: 0 10px 0 0;
+}

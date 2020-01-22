@@ -6,140 +6,49 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Mitr&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/4f820322b0.js"></script>
-  <title>Food Lova</title>
-</head>
-<body>
-  <!-- Log In -->
-  <main class="log-in">
-    <div class="logo">
-      <img src="/src/Imagenes/foodlova.png" alt="logo">
-    </div>
-    <div class="intro">
-      <p>¿Estás list@ para formar parte de la red social más glotona de la CDMX?</p>
-    </div>
-    <div class="btns">
-      <button>Crear una cuenta</button>
-      <p>O</p>
-      <button>Inicia sesión</button>
-    </div>
-  </main>
-  <!--Sign In-->
-  <main class="sign-in">
-    <div class="header">
-      <img class="logo" src="/src/Imagenes/foodlova.png" alt="logo">
-      <img class="small-imgs" src="/src/Imagenes/fila_imgs.png" alt="imgs comida">
-    </div>
-    <div class="sign-in-options">
-      <h3>Crear cuenta</h3>
-      <button><img class="fb-logo" src="/src/Imagenes/logo_fb.png" alt="logo fb">Facebook </button><br>
-      <button><img class="fb-logo" src="/src/Imagenes/logo_google.png" alt="logo google">Google</button><br>
-      <button>correo electrónico</button>
-    </div>
-    <div class="sign-in-footer">
-        <i class="fas fa-arrow-left"></i>
-    </div>
-  </main>
-  <!--User Info-->
-  <main class="user-info">
-    <div class="user-info-header">
-      <img src="/src/Imagenes/fila_imgs.png" alt="imgs comida">
-    </div>
-    <div>
-      <img src="" alt="foto de usuario">
-    </div>
-    <div class="info-inputs">
-      <label for="name">Nombre:</label>
-      <input type="text"><br>
-      <label for="nickname">Apodo:</label>
-      <input type="text"><br>
-      <label for="user_info">Un poco sobre ti:</label><br>
-      <input type="text">
-    </div>
-    <div class="user-info-footer">
-        <i class="fas fa-arrow-left"></i>
-      <button>Listo</button>
-    </div>
-    <!--PAGINA DE BIENVENIDA DESPUES DE CREAR CUENTA-->
- <section class="welcome">
-    <!--Sección para el texto de bienvenida-->
-    <section class="welcome-text">
-      <h2>
-        Bienvenid@ a
-      </h2>
-    </section>
-    <!-- Sección para el logo -->
-    <figure class="logo">
-      <img src="img/foodlova.png" alt="logo-foodLova">
-    </figure>
-    <!-- Seccion para el texto -->
-    <section class="welcome-description-text">
-      <p>
-        Donde todos somos glotones y lo presumimos
-      </p>
-      <!-- Sección para el boton vamos -->
-    </section>
-    <button class="button-go">Vamos!</button>
-  </section>
-  <!-- MODAL FACEBOOK -->
-  <section class="modal-facebook">
-    <section class="logo-Modal-facebook">
-      <section class="box-logo">
-        <figure class="logo">
-            <img src="img/foodlova.png" alt="logo-foodLova">
-          </figure>
-      <section class="row-images">
-        <img src="img/fila_imgs.png" alt="incon-files">
-        </section>
-      </section>
-      <!-- Caja para formulario Facebook -->
-      <section class="box-login-facebook">
-        <section class="form-facebook">
-        <p>
-          Crear cuenta con facebook
-        </p>
-        <form action="">
-          <p class="email-facebook">Correo: </p>
-          <input type="text" class="input-modals">
-          <p class="password-facebook">Contraseña: </p>
-          <input type="text" name="" id="input-modals">
-          <figure>
-            <img src="" alt="imagen-atras">
-            <img src="" alt="imagen-siguiente">
-          </figure>
-        </form>
-      </section>
-    </section>
-    <!-- MODAL GOOGLE -->
-    <section class="modal-google">
-        <section class="box-logo">
-        <figure class="logo">
-            <img src="img/foodlova.png" alt="logo-foodLova" class="Logo">
-          </figure>
-      <section class="row-images">
-        <img src="img/fila_imgs.png" alt="incon-files">
-        </section>
-        </section>
-        <section class="box-login-google">
-        <section class="form-google">
-        <p>
-            Crear cuenta con Google
-          </p>
-          <form action="" class=".form-google">
-            <p class="email-modal-google">Correo: </p>
-            <input type="text" class="input-modals">
-            <p class="password-modal-google">Contraseña: </p>
-            <input type="text" name="" id="input-modals">
-            <figure>
-              <img src="" alt="imagen-atras">
-              <img src="" alt="imagen-siguiente">
-            </figure>
-          </form>
-        </section>
-    </section>
-  </section>
-  </main>
+  <title>FoodLova</title>
   
+</head>
+
+<body>
+    
+  <div class="content" id="content"></div>
+  
+    
+
+    <!-- LUGARES CERCANOS A TU UBICACIÓN -->
+  </main>
+ 
+
+    </header>
+    <figure class="location-map">
+    </figure>
+
+<script src="https://kit.fontawesome.com/4f820322b0.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+<!-- <script src="/__/firebase/5.10.1/firebase-app.js"></script> -->
+<!-- <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+<!-- <script src="/__/firebase/init.js"></script> -->
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDZaNmRtlEnDMsa_tuR9iapQoZ8vTUxhNA",
+      authDomain: "foodlova-be05e.firebaseapp.com",
+      databaseURL: "https://foodlova-be05e.firebaseio.com",
+      projectId: "foodlova-be05e",
+      appId: "1:934548153482:web:6638cc8f9ee278fa"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  
+    //Make auth and firestore references
+  
+  </script>
+  <!-- <script  type="module" src="index.js"></script> -->
+  <script src="lib/firebase.js"></script>
   <script type="module" src="main.js"></script>
 </body>
 </html>
