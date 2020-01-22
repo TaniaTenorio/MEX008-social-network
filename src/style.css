@@ -287,6 +287,13 @@ a{
     font-size: 18pt;
     margin-bottom: 12px;
 }
+.formulario .form input:valid + .formulario .form div.invalid{
+    visibility: hidden;
+}
+.formulario .form input:invalid + .formulario .form div.invalid{
+    visibility: visible;
+
+}
 .formulario .form-btn button{
     background: rgba(101, 166, 3);
     border: none;

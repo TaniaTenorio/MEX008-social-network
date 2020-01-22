@@ -8,11 +8,14 @@ let userform = {
           </div>
           <form class="form">
              <label for="username">Nombre de usuario</label><br>
-             <input type="text" id="username" name="Usuario" class="text"><br>
+             <input type="text" id="username" name="Usuario" pattern="[a-zA-z]{5,}" required><br>
+             <div class="invalid"> Este campo sólo acepta caracteres alfabéticos </div>
              <label for="email">Correo Electronico</label><br>
              <input type= "email" id="signup-email" name="electronico" class="text"><br>
+             <div class="invalid"> Tu correo electrónico debe incluir el caracter @ </div>
              <label for="password">Contraseña</label><br>
              <input type="password" id="create-password" name="contraseña" class="text"><br>
+             <div class="invalid"> Tu contraseña debe contener mínimo 6 caracteres </div>
              <label for="confirm">Confirma tu contraseña</label><br>
              <input type="password" id="confirm-password" name="confirma" class="text"><br>
           </form>
